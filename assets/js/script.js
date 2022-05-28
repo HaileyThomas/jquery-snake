@@ -4,7 +4,7 @@ $(document).ready(function () {
   var context = canvas.getContext("2d");
   var width = $("#canvas").width();
   var height = $("#canvas").height();
-  var cell_width = 10;
+  var cell_width = 8;
   var run;
   var snake_food;
   var score;
