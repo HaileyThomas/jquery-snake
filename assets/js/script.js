@@ -103,6 +103,7 @@ $(document).ready(function () {
         pop_y--; //the movement of the snake will be up
         break;
     }
+    // check if the snake collide within the boundary of the canvas or the snake collide with its own body
     if (
       pop_x == -1 ||
       pop_x == width / cell_width ||
@@ -110,44 +111,48 @@ $(document).ready(function () {
       pop_y == height / cell_width ||
       collision(pop_x, pop_y, snake_array)
     ) {
-      //check if the snake collide within the boundary of the canvas or the snake collide with its own body
-      start(); //if true the game will restart
+      // if true the game will restart
+      start();
       return;
     }
 
+    // check if the snake collide with the food
     if (pop_x == snake_food.x && pop_y == snake_food.y) {
-      //check if the snake collide with the food
-      var snake_tail = { x: pop_x, y: pop_y }; //if true assign the variable for the snake tail
-      score += 3; //add a score
-      create_food(); //create another food randomly
+      // if true assign the variable for the snake tail
+      var snake_tail = { x: pop_x, y: pop_y };
+      score += 3; // add a score
+      create_food(); // create another food randomly
     } else {
-      var snake_tail = snake_array.pop(); //if false will create the variable for the snake tail
+      // if false create variable for snake tail
+      var snake_tail = snake_array.pop();
       snake_tail.x = pop_x; //assign variable for the x ordinate of snake
       snake_tail.y = pop_y; //assign variable for the y ordinate of snake
     }
 
-    snake_array.unshift(snake_tail); //if the condition is true it will add the value of the food inside the snake_array
+    // if the condition is true it will add the value of the food inside the snake_array
+    snake_array.unshift(snake_tail);
     for (var i = 0; i < snake_array.length; i++) {
       //if there's a new valued inside the snake_array it will increment
       var c = snake_array[i]; //assigned the incremented valued
-      snake_body(c.x, c.y); //then will increase the size of the snake
+      snake_body(c.x, c.y); // then will increase the size of the snake
     }
 
     snake_body(snake_food.x, snake_food.y); //increase the snake body in the correct position
-    var score_text = "Score: " + score; //assign the variable of score
-    context.fillText(score_text, 5, 10); //display the score
+    var score_text = "Score: " + score; // assign the variable of score
+    context.fillText(score_text, 5, 10); // display the score
   }
 
   // INITIALIZE GAME
-  start(); //this will start running the game
+  start(); // this will start running the game
 
   function start() {
     run = "left"; // this is the default movement of the snake
-    create_snake(); //will create the food
-    create_food(); //will create the snake
-    score = 0; //display the default score
+    create_snake(); // will create the food
+    create_food(); // will create the snake
+    score = 0; // display the default score
 
-    if (typeof game_start != "undefined") clearInterval(game_start); //check if the loop of the game is undefined and initialize the game simultaneously
+    // check if the loop of the game is undefined and initialize the game simultaneously
+    if (typeof game_start != "undefined") clearInterval(game_start);
     game_start = setInterval(config, 60); //this the fps of the game when running
   }
 });
