@@ -46,3 +46,74 @@ h2 {
     color: white;
     padding: 5px;
 }
+
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 18px;
+}
+
+.recording-icon {
+    color: white;
+    font-size: 20px;
+}
+
+#main-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-main {
+    background-color: rgb(22, 21, 21);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 3px 3px black;
+    display: flex;
+}
+
+#center-main-button {
+    background-color: rgb(22, 21, 21);
+    border: 3px solid lightgrey;
+    outline: 3px solid rgb(43, 42, 42);
+    border-radius: 10px;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+}
+
+.btn {
+    background-color: rgb(22, 21, 21);
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 3px 3px black;
+    display: flex;
+    justify-content: space-between;
+    align-items: space-around;
+}
+
+.btn-row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.white-icon {
+    color: white;
+}
+
+.red-icon {
+    color: red;
+}
+
+.green-icon {
+    color: green;
+}
