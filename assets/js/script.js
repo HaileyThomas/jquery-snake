@@ -33,7 +33,7 @@ $(document).ready(function () {
 
   // CREATE GAME STAGE
   function stage_color() {
-    context.fillStyle = "orange";
+    context.fillStyle = "grey";
     context.fillRect(0, 0, width, height);
     context.strokeStyle = "#000000";
     context.strokeRect(0, 0, width, height);
