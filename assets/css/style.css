@@ -91,13 +91,12 @@ p {
     background-color: rgb(22, 21, 21);
     padding-top: 7px;
     padding-bottom: 7px;
-    padding-left: 20px;
-    padding-right: 20px;
+    width: 80px;
     margin: 5px;
     border-radius: 10px;
     box-shadow: 3px 3px black;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: space-around;
 }
 
